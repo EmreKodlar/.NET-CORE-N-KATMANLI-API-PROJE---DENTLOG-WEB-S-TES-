@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model KategoriVeBlog
+
+
+<div class="tech-btm">
+    <h4>Kategoriler</h4>
+    <ul class="list-group">
+
+        @foreach (var blog in Model.Blogs.GroupBy(x => x.CategoryID).Select(group => new
+        {
+            Category_id = group.Key,
+            Count = group.Count()
+        }).OrderBy(x => x.Category_id)
+      )
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/Category/KategoriGetir/@blog.Category_id">
+
+                    @Model.Categories.First(x => x.CategoryID == blog.Category_id).CategoryName
+                </a>
+                <span class="badge badge-primary badge-pill">@blog.Count</span>
+            </li>
+        }
+
+    </ul>
+</div>

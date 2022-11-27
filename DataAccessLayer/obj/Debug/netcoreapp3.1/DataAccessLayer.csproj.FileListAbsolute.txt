@@ -1,0 +1,16 @@
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.dev.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.AssemblyReference.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CopyComplete
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.genruntimeconfig.cache

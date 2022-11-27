@@ -1,0 +1,33 @@
+﻿@model List<EntityLayer.Concrete.Blog>
+@using NetCore_PROJE.Controllers
+
+<div class="tech-btm">
+    <h4>Yazarın Diğer Yazıları</h4>
+    <div style="background-color: white; border-radius: 5px; ">
+        <br />
+        @foreach (var item in Model)
+        {
+
+            <div class="blog-grids row mb-3" style="margin: 5px">
+                <div class="col-md-5 blog-grid-left">
+                    <a href="/Blog/BlogDetails/@item.BlogID/@Seo.AdresDuzenle(@item.BlogTitle)" title="@item.BlogTitle">
+                        <img src="/images/@item.BloglImageName" class="img-fluid" alt="@item.BlogTitle">
+                    </a>
+                </div>
+                <div class="col-md-7 blog-grid-right">
+
+                    <h5>
+                        <a href="/Blog/BlogDetails/@item.BlogID/@Seo.AdresDuzenle(@item.BlogTitle)">@item.BlogTitle</a>
+                    </h5>
+                    <div class="sub-meta">
+                        <span>
+                            <i class="far fa-clock"></i> @item.BlogCreateContent
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        }
+        <br />
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Hakkımzda Güncelleme Sayfası ";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<br />
+@if (TempData["AboutMesaj"] != null)
+{
+    <br />
+    <div class="alert alert-success alert-dismissible " role="alert">
+        <strong>İşlem Başarılı! </strong> @TempData["AboutMesaj"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <br />
+}
+<form action="/About/AboutUpdate" enctype="multipart/form-data" name="aboutFormu" method="post" class="form-group">
+   
+    <input name="AboutID" value="@Model.AboutID" type="hidden" />
+    <label>Hakkımızda Yazısı:</label>
+    <textarea name="AboutDetails1" required rows="5" class="form-control">@Model.AboutDetails1</textarea><br />
+    <label>İletişim Yazısı:</label>
+    <textarea name="AboutDetails2" required rows="5" class="form-control">@Model.AboutDetails2</textarea><br />
+    <label>Şu anki Fotoğraf:</label><br />
+   
+        <img src="/images/@Model.AboutImageName" /><br />
+    
+    <br />
+    <label>Fotoğrafı Değiştirmek için Dosya Seçiniz. Değiştirmek istemiyorsanız, herhangi bir seçim yapmayınız...</label><br />
+    <input name="AboutImage" type="file" class="form-control" value="@Model.AboutImageName" />
+    <br /><button class="btn btn-primary">Güncelle</button>
+</form>
+

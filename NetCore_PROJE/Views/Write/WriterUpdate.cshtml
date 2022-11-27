@@ -1,0 +1,36 @@
+﻿@model NetCore_PROJE.Controllers.ClassWrite
+@{
+    ViewData["Title"] = "Yazar Güncelleme Sayfası";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+<h3>@ViewData["Title"]</h3>
+<form method="post" action="/Write/WriterUpdate" enctype="multipart/form-data" name="Api_ile_Guncelleme">
+    <input name="WriterID" type="hidden" value="@Model.WriterID" /><br />
+    <label>Yazar Adı:</label><br />
+    <input value="@Model.WriterName" name="WriterName" type="text" class="form-control" style=" min-width:100%" required />
+    <br />
+    <label>Yazar Durumu:</label><br />
+    <select name="WriterStatus" class="form-control" style="min-width:100%">
+        <option value="True">Aktif</option>
+        <option value="False">Pasif</option>
+        @if (Model.WriterStatus == true)
+        {  <option value="True" selected="selected">Aktif</option>  }
+        else
+        { <option value="False" selected="selected">Pasif</option> } 
+    </select> 
+    <br />
+    <label>Yazar Şifresi:</label><br />
+    <input name="WriterPassword" value="@Model.WriterPassword" type="password" class="form-control" style="  min-width:100%" required readonly/><br />
+    <label>Yazar Maili:</label><br />
+    <input name="WriterMail" type="email" class="form-control" style="min-width:100%" value="@Model.WriterMail" required /><br />
+    <label>Yazar Hakkında:</label><br />
+    <textarea name="WriterAbout" minlength="20" class="form-control" style="  min-width:100%" required>@Model.WriterAbout</textarea><br />
+    <label>Yazar Fotoğrafı:</label><br />
+    <input name="WriterImage" id="WriterImage" type="file" class="form-control" style="  min-width:100%" /><br />
+    *Fotoğrafı Güncellemeyecekseniz, bu kısmı boş geçebilirsiniz...<br /><br />
+    <label><b>Mevcut Fotoğraf:</b></label><br />
+    <img src="/images/@Model.WriterImageName" /><br /><br />
+    <input name="WriterImageName" type="hidden" value="@Model.WriterImageName" />
+    <button class="btn btn-success" style="margin-right:10px">GÜNCELLE</button>
+    <button class="btn btn-danger" data-dismiss="modal" action="/Write/IndexWrite">VAZGEÇ</button>
+</form>

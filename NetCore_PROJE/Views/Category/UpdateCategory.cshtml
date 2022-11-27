@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+     
+}
+
+<h3>KATEGORİ DÜZENLEME PANELİ</h3>
+
+ 
+<form method="post" action="/Category/UpdateCategory">
+
+    <div class="modal-body">
+        <input name="CategoryID" type="hidden" value="@Model.CategoryID" />
+
+        <label>Kategori İsmi:</label>
+        <input name="CategoryName" type="text" class="form-control" style="min-width:100%" value="@Model.CategoryName" required />
+        <br />
+
+        <select name="CategoryStatus" class="form-control" style="min-width:100%">
+
+            <option value="True">Aktif</option>
+            <option value="False">Pasif</option>
+
+
+            @if (Model.CategoryStatus == true)
+            {
+                <option value="True" selected="selected">Aktif</option>
+            }
+            else
+            {
+                <option value="False" selected="selected">Pasif</option>
+            }
+
+          
+
+        </select>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" style="margin:10px">Güncelle</button>
+    <button class="btn btn-danger" data-dismiss="modal" style="margin:10px">Vazgeç</button>
+</div>
+
+</form>
+

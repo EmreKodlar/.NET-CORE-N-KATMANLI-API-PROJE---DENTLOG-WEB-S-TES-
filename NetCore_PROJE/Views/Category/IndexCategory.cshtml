@@ -1,0 +1,85 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Kategoriler";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#kategori">+ Yeni Kategori Ekle</button>
+<br /><br /> 
+
+      <table class="table  table-hover">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>KATEGORİ İSİM</th>
+                  <th>KATEGORİ DURUM</th>
+
+                  <th>DÜZENLE</th>
+              </tr>
+          </thead>
+
+          @foreach (var catItem in Model)
+          {
+              <tr>
+                  <td>@catItem.CategoryID</td>
+                  <td>@catItem.CategoryName</td>
+                  <td>
+                      @if (catItem.CategoryStatus == true)
+                      {
+                          <button class="btn btn-success"  data-toggle="modal" data-target="#@catItem.CategoryID">AKTİF</button>
+                      }
+                      else
+                      {
+                          <button class="btn btn-danger">PASİF</button>
+                      }
+
+
+                  </td>
+
+                  <td>  <a  href="/Category/UpdateCategory/@catItem.CategoryID"  class="btn btn-warning"  >DÜZENLE</a>  </td>
+
+
+              </tr>
+
+
+
+            
+
+          }
+      </table>
+
+@*YENİ kategori  MODAL'I'*@
+<div class="modal" id="kategori">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3>YENİ KATEGORİ PANELİ</h3>
+            </div>
+
+            <form method="post" action="/Category/NewCategory">
+
+
+                <div class="modal-body">
+
+                    <input name="CategoryName" type="text" class="form-control" style="  min-width:100%" placeholder="Kategori Adı Giriniz..." required />
+                    <input name="CategoryStatus" type="hidden" value="True" />
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-success" style="margin:10px">EKLE</button>
+                    <button class="btn btn-danger" data-dismiss="modal" style="margin:10px">VAZGEÇ</button>
+                </div>
+
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+

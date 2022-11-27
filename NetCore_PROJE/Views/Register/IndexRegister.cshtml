@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Yazarlık Başvurusu";
+    Layout = "~/Views/Shared/UI_Layout.cshtml";
+}
+
+ 
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="title">YAZARLIK BAŞVURUSU</h3><br />
+        *Başvuru için, direkt olarak sedefyesildag0@gmail.com adresine Mail atabilirsiniz.<br /><br />
+        *<i>Başvurular değerlendirmeye alındıktan sonra, sonuç <b>OLUMLU</b> olur ise bilgilendirme yapılır.</i>
+
+        <!--
+    @if (TempData["mesaj"] != null)
+    {
+        <br />
+        <div class="alert alert-success alert-dismissible " role="alert">
+            <strong>Tebirkler... Başvurunuz bize ulaştı. </strong>  @TempData["mesaj"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <br />
+    }
+
+
+    <div class="inner-sec">
+        <div class="login p-5 bg-light mx-auto mw-100">
+            <form method="post">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom01">İsim&Soyisim</label>
+
+                        <input type="text" class="form-control" id="WriterName" name="WriterName" placeholder="" required="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputPassword1 mb-2">E-mail</label>
+                        <input type="email" class="form-control" id="WriterMail" name="WriterMail" placeholder="" required="">
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputPassword2 mb-2">Hakkınızda</label>
+                        <textarea class="form-control" id="WriteAbout" name="WriterAbout"
+                                  placeholder="Kendinizi tanıtınız..." required="" minlength="100" maxlength="600" rows="50"></textarea>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+                <p>
+                    <button type="button" data-toggle="modal" data-target="#Sartlar" class="btn btn-link" icon="fa fa-thumbs-o-up">
+                        Tüm Şartları Okudum, Kabul Ediyorum...
+                    </button>
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+        -->
+
+   
+    </div>
+</section>
+
+
+
+<div class="modal" id="Sartlar">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class=" modal-header">
+                <div class="modal-title">ŞARTLAR</div>
+            </div>
+            <div class="modal-body">
+                Lorem Ipsum reyizz Lorem Ipsum reyizz Lorem Ipsum reyizz Lorem Ipsum reyizz Lorem Ipsum reyizz Lorem Ipsum reyizz
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning" data-dismiss="modal">TAMAM</button>
+            </div>
+        </div>
+    </div>
+</div>

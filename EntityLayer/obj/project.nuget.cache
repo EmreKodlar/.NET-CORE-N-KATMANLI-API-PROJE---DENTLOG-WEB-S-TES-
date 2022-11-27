@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "gSIwsOdL+qYfsIb5LPhm7hVEPeyGEyvrYwwBXoHpcvm6w5QuH0nplE2F/xZf2hdJnI+LK/98c5lW8rvuHR2UGQ==",
+  "success": true,
+  "projectFilePath": "C:\\PROJELER\\asp.netCore\\NetCore_PROJE\\EntityLayer\\EntityLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\EMRE\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\EMRE\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\EMRE\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\EMRE\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

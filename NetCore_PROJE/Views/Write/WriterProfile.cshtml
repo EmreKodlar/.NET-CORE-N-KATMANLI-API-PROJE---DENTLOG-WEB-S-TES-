@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "Profil Sayfası";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+
+<h3>@ViewData["Title"]</h3>
+<br />
+@if (TempData["WriterMesaj"] != null)
+{
+    <br />
+    <div class="alert alert-success alert-dismissible " role="alert">
+        <strong>İşlem Başarılı! </strong> @TempData["WriterMesaj"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <br />
+}
+<form action="/Write/WriterProfile" enctype="multipart/form-data" name="profilFormu" method="post" class="form-group">
+    <input name="WriterID" value="@Model.WriterID" type="hidden" />
+    <input name="WriterPassword" value="@Model.WriterPassword" type="hidden" />
+    
+
+    <label>İsim:</label>
+    <input name="WriterName" value="@Model.WriterName" type="text" required class="form-control" /><br />
+    <label>Email:</label>
+    <input name="WriterMail" value="@Model.WriterMail" type="text" required class="form-control" /><br />
+    <label>Hakkında:</label>
+    <textarea name="WriterAbout" required rows="5" class="form-control">@Model.WriterAbout</textarea><br />
+    <label>Şu anki Fotoğraf:</label><br />
+    @if (@Model.WriterImageName == null)
+    {
+        <img src="/images/defaultProImage.png" /> <br />
+    }
+    else
+    {
+        <img src="/images/@Model.WriterImageName" /><br />
+    }
+    <br />
+    <label>Fotoğrafı Değiştirmek için Dosya Seçiniz. Değiştirmek istemiyorsanız, herhangi bir seçim yapmayınız...</label><br />
+    <input name="WriterImage" type="file" class="form-control" value="@Model.WriterImageName" />
+    <br /><button class="btn btn-primary">Güncelle</button>
+</form>
+

@@ -1,0 +1,10 @@
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\bin\Release\netcoreapp3.1\EntityLayer.deps.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\bin\Release\netcoreapp3.1\EntityLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\bin\Release\netcoreapp3.1\EntityLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.csproj.AssemblyReference.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\EntityLayer\obj\Release\netcoreapp3.1\EntityLayer.pdb

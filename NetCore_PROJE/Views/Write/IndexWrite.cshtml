@@ -1,0 +1,87 @@
+﻿@using NetCore_PROJE.Controllers
+@model List<ClassWrite>
+@{
+    ViewData["Title"] = "Yazarlar Listesi";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+
+<button data-toggle="modal" data-target="#yeniYazar" class="btn btn-primary"> + Yeni Yazar Ekle</button><br /><br />
+
+<table class="table table-hover">
+
+    <tr>
+        <th>#</th>
+        <th>İSİM</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+    @foreach (var writer in Model)
+    {
+
+        <tr>
+            <td>
+
+                @writer.WriterID
+
+            </td>
+            <td>
+
+                @writer.WriterName
+
+            </td>
+            <td>
+                @if (writer.WriterStatus == true)
+                {
+                    <button class="btn btn-success">Aktif</button>
+                }
+                else
+                {
+                    <button class="btn btn-danger">Pasif</button>
+                }
+            </td>
+
+            <td>
+                <a href="/Write/WriterUpdate/@writer.WriterID" class="btn btn-warning">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Write/WriterDelete/@writer.WriterID" class="btn btn-danger" onclick="return confirm('Silmek İstediğinize Emin misiniz?');" id="@writer.WriterID">Sil</a>
+            </td>
+        </tr>
+
+    }
+</table>
+ 
+@*YENİ yazar  MODAL'I'*@
+<div class="modal" id="yeniYazar">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3> ~YENİ YAZAR PANELİ~</h3>
+                <hr />
+            </div>
+
+            <form method="post" action="/Write/WriterEklemeYeri" enctype="multipart/form-data" name="Api_ile_ResimEkleme">
+                <div class="modal-body">
+
+                    <input name="WriterName" type="text" class="form-control" style="  min-width:100%" placeholder="Yazar Adı Giriniz..." required />
+                    <input name="WriterStatus" type="hidden" value="True" /><br />
+                    <input name="WriterPassword" type="text" class="form-control" style="  min-width:100%" placeholder="Yazar Şifresi Giriniz..." required /><br />
+                    <input name="WriterMail" type="email" class="form-control" style="  min-width:100%" placeholder="Yazar Mail Giriniz..." required /><br />
+                    <textarea name="WriterAbout" required minlength="20" class="form-control" style="  min-width:100%" placeholder="Yazar Hakkında..."></textarea><br />
+                    <input name="WriterImage" id="WriterImage" type="file" class="form-control" style="  min-width:100%" placeholder="Yazar Fotoğrafı Seçiniz..." /><br />
+                    *Fotoğrafı Boş geçerseniz, otomatik olarak <i>kedi</i> resmi yüklenir...<br />
+
+                </div>
+                <div class="modal-footer">
+
+                    <button class="btn btn-success" style="margin:10px">EKLE</button>
+                    <button class="btn btn-danger" data-dismiss="modal" style="margin:10px">VAZGEÇ</button>
+                </div>
+ 
+            </form>
+
+        </div>
+    </div>
+</div>

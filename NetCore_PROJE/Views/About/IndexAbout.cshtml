@@ -1,0 +1,36 @@
+﻿@model  EntityLayer.Concrete.About 
+@{
+    ViewData["Title"] = "HAKKIMIZDA";
+    Layout = "~/Views/Shared/UI_Layout.cshtml";
+}
+<div style="background: repeating-linear-gradient(#efefef, #fff )">
+    <div class="container">
+        <br /> 
+        <H2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-emphasis-color:aliceblue;color:cadetblue">
+            ~HAKKIMIZDA~
+
+        </H2>
+
+        <br />
+        <ul class="list-group">
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            
+                <img src="/images/@Model.AboutImageName" 
+                     class="img-fluid" align="left" 
+                     style="margin: 35px;margin-left:10px; border-radius: 5%;">
+
+                <p style="text-align: justify; color: #333;  font-family:'Trebuchet MS'">
+
+                       @Model.AboutDetails1 <br /><br />
+
+                    <i>@Model.AboutDetails2</i>
+                </p>
+            </li>
+        </ul>
+            <br />
+           
+    </div>
+
+</div>
+

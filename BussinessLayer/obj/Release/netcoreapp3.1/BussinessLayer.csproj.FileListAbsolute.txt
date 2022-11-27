@@ -1,0 +1,15 @@
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\BussinessLayer.deps.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\BussinessLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\BussinessLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\DataAccessLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\EntityLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\DataAccessLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\bin\Release\netcoreapp3.1\EntityLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.csproj.AssemblyReference.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.AssemblyInfoInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.AssemblyInfo.cs
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.csproj.CopyComplete
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.pdb

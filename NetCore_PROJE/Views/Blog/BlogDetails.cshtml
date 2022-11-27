@@ -1,0 +1,157 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = Model.BlogTitle;
+    Layout = "~/Views/Shared/UI_Layout.cshtml";
+
+    Random rnd = new Random();
+
+
+    int s1 = rnd.Next(1, 50);
+    int s2 = rnd.Next(1, 50);
+    int sonuc = s1 + s2;
+
+
+    }
+
+
+<!--//banner-->
+<section class="banner-bottom" style="background-color:lightgrey">
+    <!--/blog-->
+    <div class="container">
+        <div class="row">
+            <!--left-->
+          
+            <div class="col-lg-8 left-blog-info-w3layouts-agileits text-justify" style="background-color: white; border-radius: 10px;">
+                <div class="blog-grid-top" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; ">
+                    <div class="b-grid-top">
+                        <h3 style="margin-bottom: 15px; margin-top: 15px; padding:15px; background-color:crimson; color:aliceblue; border-radius:5px">
+                            <i class="fas fa-angle-double-right"></i> @Model.BlogTitle
+                        </h3>
+                        <div class="blog_info_left_grid">
+
+     <img src="/images/@Model.BloglImageName" class="img-fluid" alt="@Model.BlogTitle" width="730" style="border-radius: 10px;">
+
+                        </div>
+                        <div class="blog-info-middle">
+                            <ul>
+                                <li>
+                                    <a href="#" style="margin-right:20px">
+                                        <i class="far fa-calendar-alt"> </i>@Model.BlogCreateContent
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-comment"> </i> @Model.CommentCount
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p style="color:black;  ">
+                        @Html.Raw(Model.BlogContent)
+                    </p>
+
+                </div>
+
+                @* yorum satırı *@
+                <div class="comment-top" style="padding:20px;">
+                    <h3>YORUMLAR</h3>
+                    <hr />
+
+                    @foreach (var yorum in ViewBag.yorumSirala)
+                    {
+                        <div class="media">
+
+                            <div class="media-body">
+                                <b style="color:brown">@yorum.CommentTitle </b><br />
+
+
+                                @yorum.CommentContent <br />
+
+                                <i style="color:dimgrey; font-size:smaller"><b>@yorum.CommentUserName</b>   @(((DateTime)yorum.CommentDate).ToString("dd-MM-yyyy HH:mm:ss"))</i>
+
+                                <hr />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!--//yorum satırı bitti-->
+
+
+                <div class="comment-top" style="padding:20px; ">
+                    <h4>Bir Yorum Yapın</h4>
+                    <div class="comment-bottom">
+                        <form action="/Comment/CommentAddBlog" method="post">
+                            <input class="form-control" type="text" name="CommentUserName" pattern="[A-Za-z\s]+" title="Sadece Harf Kullanınız..." placeholder="Adınız Soyadınız" required="" style="color: dimgrey">
+
+
+                            <input class="form-control" type="text" name="CommentTitle" pattern="[A-Za-z0-9\s]+" title="Sadece Harf ve Rakam Kullanınız..." placeholder="Başlık" required="" style="color: dimgrey;">
+
+                            <input class="form-control" type="hidden" name="BLogID"   value="@Model.BlogID">
+
+                            <textarea class="form-control" name="CommentContent"  placeholder="Mesaj..." required="" style="color: dimgrey;"></textarea>
+
+                            <label>Toplama İşlemini Yapınız: @s1 + @s2 =?</label>
+
+                            <input class="form-control" type="text" id="kullanici_sonuc" name="kullanici_sonuc" pattern="[0-9]*" title="Sadece Rakam Kullanınız..." style="color: dimgrey;" />
+                            <input class="form-control" type="hidden" id="gercekSonuc" value="@sonuc" />
+
+                            <i style="color: dimgrey;font-size:smaller">
+                                *Yorumunuz yapıldığında IP adresiniz sistemimize kaydedilir.
+                                Lütfen hakaret, küfür ve rencide edici sözlerden kaçınınız.
+                            </i> <br />
+                            <button type="submit" id="yorumEkle" name="yorumEkle" class="btn btn-primary submit">GÖNDER</button>
+
+                        </form>
+
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+
+            <!--//left-->
+            <!--right- kategori sirala-->
+            <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+                <div class="right-blog-info text-left">
+
+                    @await Component.InvokeAsync("CategoryList")
+
+                    @await Component.InvokeAsync("BlogListFromWriter", Model.BlogID)
+
+                </div>
+
+
+
+
+            </aside>
+            <!--//right-->
+        </div>
+    </div>
+</section>
+<!--//main-->
+
+<script type="text/javascript">
+ 
+    function sayiDogrula(e) {
+
+        const sonucAl = document.getElementById("kullanici_sonuc").value;
+
+        var gercekSonucAl = document.getElementById("gercekSonuc").value;
+
+        if (sonucAl != gercekSonucAl) {
+
+            alert("Toplamayı Yanlış Yaptınız! Yorum Eklenemedi...");
+            e.preventDefault();
+            e.stopPropagation();
+        } else {
+           /* alert("Yorumunuz Başarılı Bir Şekilde Kayıt Edildi. Kontrol Edildikten Sonra Yayınlanacaktır!")*/
+        }
+    }
+
+    document.getElementById("yorumEkle").addEventListener("click", sayiDogrula)
+</script>

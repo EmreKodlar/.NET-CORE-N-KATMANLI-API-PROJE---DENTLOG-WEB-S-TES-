@@ -1,0 +1,68 @@
+﻿@using NetCore_PROJE.Controllers
+@model List<CommentClass>
+@{
+    ViewData["Title"] = "Yorumlar";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+
+<h2>TÜM YORUMLAR</h2>
+
+@if (TempData["mesaj"] != null)
+{
+    <br />
+    <div class="alert alert-success alert-dismissible " role="alert">
+        <strong>İşlem Başarılı! </strong> @TempData["mesaj"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <br />
+}
+<br />
+<table class="table table-hover" id="dataTable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>YORUMCU</th>
+            <th>BAŞLIK</th>
+            <th>TARİH</th>
+            <th>IP</th>
+            <th>DURUM</th>
+            <th>SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderByDescending(x => x.CommentID))
+        {
+        <tr>
+            <td>@item.CommentID</td>
+            <td>@item.CommentUserName</td>
+            <td>@item.CommentTitle</td>
+            <td>@item.CommentDate</td>
+            <td>@item.CommentIPadress</td>
+            <td>
+                @if (@item.CommentStatus == true)
+                {
+                    <a href="/Comment/CommentDurum/@item.CommentID" class="btn btn-success" onclick="return confirm('Değiştirmek İstediğinize Emin misiniz?');" id="@item.CommentID">
+                        Aktif
+                    </a>
+                }
+                else         
+                { <a href="/Comment/CommentDurum/@item.CommentID" class="btn btn-danger" onclick="return confirm('Değiştirmek İstediğinize Emin misiniz?');" id="@item.CommentID">
+                    Pasif
+                </a>
+
+                }
+
+
+            </td>
+
+             <td><a href ="/Comment/CommentSil/@item.CommentID" class="btn btn-danger" onclick="return confirm('Silmek İstediğinize Emin misiniz?');" id="@item.CommentID">Sil
+                    </a>
+                </td>
+            </tr>
+                    }
+</tbody>
+</table>
+
+

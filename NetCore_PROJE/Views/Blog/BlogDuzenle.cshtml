@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "Blog Düzenleme Paneli";
+    Layout = "~/Views/Shared/Writer_Layout.cshtml";
+}
+<script src="~/ckeditor/jquery/jquery.js"></script>
+<script src="~/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="~/ckeditor/ckeditorJS.js"></script>
+<h3>Blog Düzenleme Paneli</h3>
+
+<form action="/Blog/BlogDuzenle" method="post">
+    <br /> @*---burası yazı güncelleme--------*@
+    <input class="form-control" type="text" name="BlogTitle" required value="@Model.BlogTitle" /><br />
+    @Html.DropDownListFor(m => m.CategoryID, ViewBag.kategoriler as SelectList, new { @class = "form-control", required = "required" })
+    <br />
+    <textarea id="editor1" class="form-control" minlength="130" rows="10" name="BlogContent" required>@Model.BlogContent</textarea>
+    <input class="form-control" type="hidden" name="BlogThumbnailImageName" value="@Model.BloglImageName" />
+    <input class="form-control" type="hidden" name="BloglImageName" value="@Model.BloglImageName" />
+    <input class="form-control" type="hidden" name="BlogStatus" value="True" />
+    <input class="form-control" type="hidden" name="BlogCreateContent" value="@Model.BlogCreateContent" />
+    <input class="form-control" type="hidden" name="WriterID" value="@ViewBag.Writer_ID" />
+    <input class="form-control" type="hidden" name="BlogID" value="@Model.BlogID" />
+    <br />
+    <button class="btn btn-primary">GÜNCELLE</button>
+</form>
+<br />
+Bloğun Şu anki Resmi:
+<br />
+<img src="/images/@Model.BloglImageName" height="200" style="align-self:start" />
+<form action="/Blog/BlogDuzenleFoto" method="post" enctype="multipart/form-data">
+    @*---burası resim güncelleme--------*@
+    <br />
+    <input class="form-control" type="file" name="BloglImage" required />
+    @*---------------bunların hepsini göndermen gerekiyor-----------------------------------*@
+    <input class="form-control" type="hidden" name="CategoryID" value="@Model.CategoryID" />
+    <input class="form-control" type="hidden" name="WriterID" value="@ViewBag.Writer_ID" />
+    <input class="form-control" type="hidden" name="BlogID" value="@Model.BlogID" />
+    <input class="form-control" type="hidden" name="BlogCreateContent" value="@Model.BlogCreateContent" />
+    <input class="form-control" type="hidden" name="BlogContent" value="@Model.BlogContent" />
+    <input class="form-control" type="hidden" name="BlogTitle" value="@Model.BlogTitle" />
+    <input class="form-control" type="hidden" name="BlogStatus" value="True" />
+    @*--------------------------------------------------------------------------------------*@
+    <br />
+    <button class="btn btn-danger">RESMİ GÜNCELLE</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        CKEDITOR.replace('editor1', {
+            customConfig: '/ckeditor/Config.js'
+        });
+    });
+</script>

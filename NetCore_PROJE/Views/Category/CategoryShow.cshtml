@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model KategoriVeBlog
+@{
+    ViewData["Title"] = "Kategoriler";
+    Layout = "~/Views/Shared/UI_Layout.cshtml";
+}
+<div style="background: repeating-linear-gradient(#808080, #efefef )">
+    <div class="container"><br /> 
+        <H2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-emphasis-color:aliceblue;color:bisque"> 
+            
+            ~KATEGORİ LİSTESİ~ 
+        
+        </H2>
+       
+    <br />
+        <ul class="list-group">
+
+            @foreach (var blog in Model.Blogs.GroupBy(x => x.CategoryID).Select(group => new
+            {
+                Category_id = group.Key,
+                Count = group.Count()
+            }).OrderBy(x => x.Category_id)
+         )
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/Category/KategoriGetir/@blog.Category_id">
+                        
+                        @Model.Categories.FirstOrDefault(x => x.CategoryID == blog.Category_id ).CategoryName
+                    </a>
+                    <span class="badge badge-primary badge-pill">@blog.Count</span>
+                </li>
+            }
+
+        </ul>
+
+        <br />
+
+    </div>
+</div>

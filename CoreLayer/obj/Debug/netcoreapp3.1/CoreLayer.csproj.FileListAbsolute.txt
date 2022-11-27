@@ -1,0 +1,10 @@
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\bin\Debug\netcoreapp3.1\CoreLayer.deps.json
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\bin\Debug\netcoreapp3.1\CoreLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\bin\Debug\netcoreapp3.1\CoreLayer.pdb
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.csproj.AssemblyReference.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.AssemblyInfoInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.AssemblyInfo.cs
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.csproj.CoreCompileInputs.cache
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.dll
+C:\PROJELER\asp.netCore\NetCore_PROJE\CoreLayer\obj\Debug\netcoreapp3.1\CoreLayer.pdb
